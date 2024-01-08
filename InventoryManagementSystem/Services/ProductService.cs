@@ -34,6 +34,12 @@ public class ProductService : IProductService
     public List<Product> GetAll()
         => products;
 
+    public List<Product> GetAllAvailable()
+        => products.FindAll(p => p.StockQuantity > 0);
+
+    public List<Product> GetAllSoldOut()
+        => products.FindAll(p => p.StockQuantity == 0);
+
     public Product GetById(int id)
     {
         var product = products.FirstOrDefault(p => p.Id == id)

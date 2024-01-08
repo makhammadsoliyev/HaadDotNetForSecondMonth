@@ -1,6 +1,5 @@
 ﻿using InventoryManagementSystem.Entities;
 using InventoryManagementSystem.Interfaces;
-using System.Drawing;
 
 namespace InventoryManagementSystem.Services;
 

@@ -41,6 +41,14 @@ public class CustomerService : ICustomerService
         return customer;
     }
 
+    public List<Product> GetPurchaseHistory(int id)
+    {
+        var customer = customers.FirstOrDefault(c => c.Id == id)
+            ?? throw new Exception("Customer with this id was not found");
+
+        return customer.PurchasedProducts;
+    }
+
     public Customer Update(int id, Customer customer)
     {
         var existCustomer = customers.FirstOrDefault(c => c.Id == id)

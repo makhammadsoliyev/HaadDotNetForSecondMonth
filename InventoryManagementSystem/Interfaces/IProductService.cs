@@ -9,4 +9,6 @@ public interface IProductService
     Product Update(int id, Product product);
     bool Delete(int id);
     List<Product> GetAll();
+    List<Product> GetAllAvailable();
+    List<Product> GetAllSoldOut();
 }

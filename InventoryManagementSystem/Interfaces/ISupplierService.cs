@@ -9,4 +9,5 @@ public interface ISupplierService
     Supplier Update(int id, Supplier supplier);
     bool Delete(int id);
     List<Supplier> GetAll();
+    List<Product> GetAllSuppliedProducts(int id);
 }

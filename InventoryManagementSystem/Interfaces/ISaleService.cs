@@ -9,4 +9,5 @@ public interface ISaleService
     Sale Update(int id, Sale sale);
     bool Delete(int id);
     List<Sale> GetAll();
+    //List<Product> GetTopSellingProducts();
 }

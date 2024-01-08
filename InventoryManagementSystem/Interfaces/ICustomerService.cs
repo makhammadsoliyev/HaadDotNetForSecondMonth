@@ -9,4 +9,5 @@ public interface ICustomerService
     Customer Update(int id, Customer customer);
     bool Delete(int id);
     List<Customer> GetAll();
+    List<Product> GetPurchaseHistory(int id);
 }

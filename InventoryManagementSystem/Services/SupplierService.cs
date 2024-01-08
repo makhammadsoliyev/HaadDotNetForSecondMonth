@@ -33,6 +33,14 @@ public class SupplierService : ISupplierService
     public List<Supplier> GetAll()
         => suppliers;
 
+    public List<Product> GetAllSuppliedProducts(int id)
+    {
+        var supplier = suppliers.FirstOrDefault(s => s.Id == id)
+            ?? throw new Exception("Supplier with this id was not found");
+
+        return supplier.Products;
+    }
+
     public Supplier GetById(int id)
     {
         var supplier = suppliers.FirstOrDefault(s => s.Id == id)
