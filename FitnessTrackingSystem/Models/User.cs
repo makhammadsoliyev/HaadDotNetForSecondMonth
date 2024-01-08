@@ -6,7 +6,7 @@ public class User
 
     public User()
     {
-        this.Id = ++id;   
+        this.Id = ++id;
     }
 
     public int Id { get; set; }

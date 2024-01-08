@@ -104,7 +104,7 @@ public class CourseMenu
                 Instructor = instructorService.GetById(instructorId)
             };
 
-            var updatedCourse = courseService.Add(course);
+            var updatedCourse = courseService.Update(id, course);
             AnsiConsole.MarkupLine("[green]Successfully updated...[/]");
         }
         catch (Exception ex)
