@@ -21,7 +21,7 @@ public class SaleService : ISaleService
         var product = productService.GetById(sale.ProductId);
         var customer = customerService.GetById(sale.CustomerId);
 
-        if (product.StockQuantity > sale.Quantity)
+        if (product.StockQuantity < sale.Quantity)
             throw new Exception("This amount of product is not available");
         product.StockQuantity -= sale.Quantity;
         customer.PurchasedProducts.Add(product);
@@ -63,10 +63,12 @@ public class SaleService : ISaleService
         if (sale.Quantity > existSale.Quantity + product.StockQuantity)
             throw new Exception("This amount of product is not available");
 
+        product.StockQuantity += existSale.Quantity;
+
         existSale.Id = id;
         existSale.ProductId = sale.ProductId;
         existSale.CustomerId = sale.CustomerId;
-        existSale.Quantity -= sale.Quantity - existSale.Quantity;
+        existSale.Quantity = sale.Quantity;
 
         return existSale;
     }

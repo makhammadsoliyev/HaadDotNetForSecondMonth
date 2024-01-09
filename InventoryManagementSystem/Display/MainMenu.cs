@@ -36,18 +36,18 @@ public class MainMenu
         while (circle)
         {
             AnsiConsole.Clear();
-            var selection = selectionDisplay.ShowSelectionMenu("Choose one of options", new string[] { "Product", "Supplier", "Customer", "Sale", "Exit" });
+            var selection = selectionDisplay.ShowSelectionMenu("Choose one of options", new string[] { "Customer", "Supplier", "Product",  "Sale", "Exit" });
 
             switch (selection)
             {
-                case "Product":
-                    productMenu.Display();
+                case "Customer":
+                    customerMenu.Display();
                     break;
                 case "Supplier":
                     supplierMenu.Display();
                     break;
-                case "Customer":
-                    customerMenu.Display();
+                case "Product":
+                    productMenu.Display();
                     break;
                 case "Sale":
                     saleMenu.Display();
