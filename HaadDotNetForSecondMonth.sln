@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessTrackingSystem", "Fi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryManagementSystem", "InventoryManagementSystem\InventoryManagementSystem.csproj", "{CB9867E4-18DE-40E9-902B-CBC6850A85E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSystemWatcher", "FileSystemWatcher\FileSystemWatcher.csproj", "{ABB36238-9414-4418-A08B-C297063C94BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileSystemWatcher", "FileSystemWatcher\FileSystemWatcher.csproj", "{ABB36238-9414-4418-A08B-C297063C94BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransferFilesInChunks", "TransferFilesInChunks\TransferFilesInChunks.csproj", "{045694E1-1F5F-46FF-805C-7CC4D2EEFAC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransferFilesInChunks", "TransferFilesInChunks\TransferFilesInChunks.csproj", "{045694E1-1F5F-46FF-805C-7CC4D2EEFAC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompressAndExtract", "CompressAndExtract\CompressAndExtract.csproj", "{A008DB5C-4AF9-405D-B274-59E7EDA62FA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{045694E1-1F5F-46FF-805C-7CC4D2EEFAC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{045694E1-1F5F-46FF-805C-7CC4D2EEFAC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{045694E1-1F5F-46FF-805C-7CC4D2EEFAC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A008DB5C-4AF9-405D-B274-59E7EDA62FA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A008DB5C-4AF9-405D-B274-59E7EDA62FA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A008DB5C-4AF9-405D-B274-59E7EDA62FA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A008DB5C-4AF9-405D-B274-59E7EDA62FA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

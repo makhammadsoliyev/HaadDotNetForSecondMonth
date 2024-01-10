@@ -5,6 +5,11 @@ namespace InventoryManagementSystem.Display;
 
 public class MainMenu
 {
+    private readonly string salePath;
+    private readonly string productPath;
+    private readonly string customerPath;
+    private readonly string supplierPath;
+
     private readonly SaleService saleService;
     private readonly ProductService productService;
     private readonly SupplierService supplierService;
@@ -17,10 +22,15 @@ public class MainMenu
 
     public MainMenu()
     {
-        this.supplierService = new SupplierService();
-        this.customerService = new CustomerService();
-        this.productService = new ProductService(supplierService);
-        this.saleService = new SaleService(customerService, productService);
+        this.productPath = @"C:\Users\User\Desktop\dotnet\HaadDotNetForSecondMonth\InventoryManagementSystem\DataBases\products.txt";
+        this.salePath = @"C:\Users\User\Desktop\dotnet\HaadDotNetForSecondMonth\InventoryManagementSystem\DataBases\sales.txt";
+        this.customerPath = @"C:\Users\User\Desktop\dotnet\HaadDotNetForSecondMonth\InventoryManagementSystem\DataBases\customers.txt";
+        this.supplierPath = @"C:\Users\User\Desktop\dotnet\HaadDotNetForSecondMonth\InventoryManagementSystem\DataBases\suppliers.txt";
+
+        this.supplierService = new SupplierService(supplierPath);
+        this.customerService = new CustomerService(customerPath);
+        this.productService = new ProductService(supplierService, productPath);
+        this.saleService = new SaleService(customerService, productService, salePath);
 
         this.saleMenu = new SaleMenu(saleService);
         this.productMenu = new ProductMenu(productService);

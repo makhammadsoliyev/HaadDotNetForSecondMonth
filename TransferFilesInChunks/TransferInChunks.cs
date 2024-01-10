@@ -7,7 +7,7 @@ public static class TransferInChunks
         int bufferSize = 1024 * 1024;
         byte[] buffer = new byte[bufferSize];
         long totalBytes = new FileInfo(sourceFilePath).Length;
-        long bytesTransfered = 0;
+        long bytesTransferred = 0;
 
         FileStream sourceStream = File.OpenRead(sourceFilePath);
 
@@ -21,9 +21,9 @@ public static class TransferInChunks
         while ((bytesRead = sourceStream.Read(buffer, 0, buffer.Length)) > 0)
         {
             destinationStream.Write(buffer, 0, bytesRead);
-            bytesTransfered += bytesRead;
+            bytesTransferred += bytesRead;
 
-            decimal percentage = (decimal)bytesTransfered / totalBytes;
+            decimal percentage = (decimal)bytesTransferred / totalBytes;
             Console.Clear();
             Console.WriteLine($"{percentage:P2}% complete");
             //Thread.Sleep();
