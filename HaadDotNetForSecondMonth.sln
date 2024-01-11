@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransferFilesInChunks", "Tr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompressAndExtract", "CompressAndExtract\CompressAndExtract.csproj", "{A008DB5C-4AF9-405D-B274-59E7EDA62FA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertPDFToTXT", "ConvertPDFToTXT\ConvertPDFToTXT.csproj", "{66931CA6-8944-4356-90A7-FC98158DC172}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConvertPDFToTXT", "ConvertPDFToTXT\ConvertPDFToTXT.csproj", "{66931CA6-8944-4356-90A7-FC98158DC172}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyTrackerSystem", "StudyTrackerSystem\StudyTrackerSystem.csproj", "{06EF0AC7-414A-4CD8-9469-DDB79937A9E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{66931CA6-8944-4356-90A7-FC98158DC172}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66931CA6-8944-4356-90A7-FC98158DC172}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66931CA6-8944-4356-90A7-FC98158DC172}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06EF0AC7-414A-4CD8-9469-DDB79937A9E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06EF0AC7-414A-4CD8-9469-DDB79937A9E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06EF0AC7-414A-4CD8-9469-DDB79937A9E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06EF0AC7-414A-4CD8-9469-DDB79937A9E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
