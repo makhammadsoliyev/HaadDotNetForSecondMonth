@@ -14,7 +14,7 @@ public class StudyPlanMenu
     {
         this.studyPlanService = studyPlanService;
     }
-
+        
     private void Add()
     {
         int studentId = AnsiConsole.Ask<int>("[aqua]StudentId: [/]");
