@@ -1,6 +1,5 @@
 ﻿using InventoryManagementSystem.Entities;
 using InventoryManagementSystem.Interfaces;
-using System.IO;
 using System.Text;
 
 namespace InventoryManagementSystem.Services;
@@ -11,7 +10,7 @@ public class SupplierService : ISupplierService
     private readonly string path;
 
     public SupplierService(string path)
-    { 
+    {
         this.path = path;
         ReadSuppliersFromFile();
     }

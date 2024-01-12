@@ -1,5 +1,4 @@
-﻿using Spectre.Console;
-using StudyTrackerSystem.Display;
+﻿using StudyTrackerSystem.Display;
 
 MainMenu mainMenu = new MainMenu();
 mainMenu.Main();

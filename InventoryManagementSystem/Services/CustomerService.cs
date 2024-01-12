@@ -94,7 +94,7 @@ public class CustomerService : ICustomerService
         StringBuilder sb = new StringBuilder();
         foreach (var product in products)
             sb.Append($"|{product.Id};{product.Name};{product.Description};{product.Price};{product.StockQuantity};{product.SupplierId}");
-        
+
         var res = sb.ToString();
         if (res.Length > 0)
             res = res.Substring(1, res.Length - 1);
@@ -106,7 +106,7 @@ public class CustomerService : ICustomerService
     {
         var res = new List<Product>();
         var arrayData = data.Split("|");
-        foreach(var row in arrayData)
+        foreach (var row in arrayData)
         {
             if (row == string.Empty)
                 continue;
@@ -139,8 +139,8 @@ public class CustomerService : ICustomerService
             if (row == string.Empty)
                 continue;
             var saleData = row.Split(',');
-            var customer = new Customer() 
-            { 
+            var customer = new Customer()
+            {
                 Id = int.Parse(saleData[0]),
                 FirstName = saleData[1],
                 LastName = saleData[2],

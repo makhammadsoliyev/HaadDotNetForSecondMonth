@@ -13,7 +13,7 @@ public class ProductService : IProductService
     {
         this.path = path;
         this.supplierService = supplierService;
-        ReadProductsFromFile();    
+        ReadProductsFromFile();
     }
 
     public Product Add(Product product)
@@ -106,7 +106,7 @@ public class ProductService : IProductService
         StreamReader sr = new StreamReader(sm);
         var data = sr.ReadToEnd().Split("\n");
         sr.Close();
-        foreach(var row in data)
+        foreach (var row in data)
         {
             if (row == string.Empty)
                 continue;

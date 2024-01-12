@@ -1,5 +1,4 @@
 ﻿using InventoryManagementSystem.Entities;
-using InventoryManagementSystem.Interfaces;
 using InventoryManagementSystem.Services;
 using Spectre.Console;
 

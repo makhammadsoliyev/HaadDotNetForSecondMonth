@@ -19,12 +19,12 @@ public class StudentService : IStudentService
         StringBuilder sb = new StringBuilder();
 
         foreach (var s in students)
-            sb.AppendLine($"{s.Id}|{s.FirstName}|{s.LastName}|{s.Email}|{s.Password}");   
+            sb.AppendLine($"{s.Id}|{s.FirstName}|{s.LastName}|{s.Email}|{s.Password}");
 
         File.WriteAllText(Constants.STUDENTS_PATH, sb.ToString());
 
         return student;
-    } 
+    }
 
     public bool Delete(int id)
     {
@@ -98,5 +98,5 @@ public class StudentService : IStudentService
         File.WriteAllText(Constants.STUDENTS_PATH, sb.ToString());
 
         return existStudent;
-    } 
+    }
 }

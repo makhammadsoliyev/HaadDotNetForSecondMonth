@@ -1,5 +1,4 @@
 ﻿using Spectre.Console;
-using StudyTrackerSystem.Interfaces;
 using StudyTrackerSystem.Models;
 using StudyTrackerSystem.Services;
 

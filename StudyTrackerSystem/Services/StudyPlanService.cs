@@ -130,7 +130,7 @@ public class StudyPlanService : IStudyPlanService
         StringBuilder sb = new StringBuilder();
         foreach (var s in studyPlans)
             sb.AppendLine($"{s.Id}|{s.StudentId}|{s.CourseId}|{s.Materials}|{s.Topics}|{s.Goals}|{s.StudyHoursPerWeek}|{s.DayOff}|{s.PreferredStudyTime}");
-        
+
         File.WriteAllText(Constants.STUDY_PLANS_PATH, sb.ToString());
 
         return existStudyPlan;

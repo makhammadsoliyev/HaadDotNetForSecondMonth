@@ -1,6 +1,5 @@
 ﻿using Spectre.Console;
 using StudyTrackerSystem.Enums;
-using StudyTrackerSystem.Interfaces;
 using StudyTrackerSystem.Models;
 using StudyTrackerSystem.Services;
 
@@ -14,7 +13,7 @@ public class StudyPlanMenu
     {
         this.studyPlanService = studyPlanService;
     }
-        
+
     private void Add()
     {
         int studentId = AnsiConsole.Ask<int>("[aqua]StudentId: [/]");

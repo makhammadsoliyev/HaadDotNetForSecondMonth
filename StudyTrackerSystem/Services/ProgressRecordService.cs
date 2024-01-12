@@ -49,7 +49,7 @@ public class ProgressRecordService : IProgressRecordService
         }
 
         File.WriteAllText(Constants.PROGRESS_RECORDS_PATH, sb.ToString());
-        
+
         return true;
     }
 

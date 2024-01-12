@@ -18,5 +18,5 @@ public class StudyPlan : Auditable
     public string Goals { get; set; }
     public int StudyHoursPerWeek { get; set; }
     public DayOfWeek DayOff { get; set; }
-    public PartOfDays  PreferredStudyTime { get; set; }
+    public PartOfDays PreferredStudyTime { get; set; }
 }

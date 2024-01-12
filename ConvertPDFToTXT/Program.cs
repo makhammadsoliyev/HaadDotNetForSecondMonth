@@ -25,7 +25,7 @@ static void PDFtoTextConverter(string pdfFilePath, string outputTxtFilePath)
 {
     PdfReader reader = new PdfReader(pdfFilePath);
     TextWriter writer = new StreamWriter(outputTxtFilePath);
-    
+
     for (int i = 1; i <= reader.NumberOfPages; i++)
         writer.Write(PdfTextExtractor.GetTextFromPage(reader, i, new SimpleTextExtractionStrategy()));
 

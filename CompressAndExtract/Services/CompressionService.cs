@@ -55,8 +55,8 @@ public class CompressionService : ICompressionService
         if (Path.GetExtension(zipFilePath) != ".zip")
             throw new Exception("Zip File Path is not valid");
 
-/*        if (!Directory.Exists(extractToFolderPath))
-            throw new Exception("Folder does not exist");*/
+        /*        if (!Directory.Exists(extractToFolderPath))
+                    throw new Exception("Folder does not exist");*/
 
         ZipFile.ExtractToDirectory(zipFilePath, extractToFolderPath);
     }

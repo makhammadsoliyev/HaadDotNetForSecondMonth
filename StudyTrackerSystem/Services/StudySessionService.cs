@@ -19,7 +19,7 @@ public class StudySessionService : IStudySessionService
     public StudySession Add(StudySession session)
     {
         var studySessions = GetAll();
-        
+
         var student = studentService.GetById(session.StudentId);
         var course = courseService.GetById(session.CourseId);
 
@@ -74,7 +74,7 @@ public class StudySessionService : IStudySessionService
                 StudyMaterialsCovered = sessionData[5],
                 Notes = sessionData[6]
             };
-            
+
             studySessions.Add(studySession);
         }
 
@@ -137,8 +137,8 @@ public class StudySessionService : IStudySessionService
         StringBuilder sb = new StringBuilder();
 
         foreach (var s in studySessions)
-            sb.AppendLine($"{s.Id}|{s.StudentId}|{s.CourseId}|{s.StartDate}|{s.DurationInMinutes}|{s.StudyMaterialsCovered}|{s.Notes}");   
-        
+            sb.AppendLine($"{s.Id}|{s.StudentId}|{s.CourseId}|{s.StartDate}|{s.DurationInMinutes}|{s.StudyMaterialsCovered}|{s.Notes}");
+
         File.WriteAllText(Constants.STUDY_SESSIONS_PATH, sb.ToString());
 
         return studySession;
