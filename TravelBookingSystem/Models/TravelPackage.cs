@@ -9,10 +9,10 @@ public class TravelPackage : Auditable
         Id = ++id;
     }
 
-    public string? Name { get; set; }
-    public string? Destination { get; set; }
+    public string Name { get; set; }
+    public string Destination { get; set; }
     public int Duration { get; set; }
     public decimal Price { get; set; }
     public int Spots { get; set; }
-    public string? Itinerary { get; set; }
+    public string Itinerary { get; set; }
 }

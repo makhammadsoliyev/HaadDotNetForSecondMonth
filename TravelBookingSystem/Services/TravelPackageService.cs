@@ -9,7 +9,7 @@ public class TravelPackageService : ITravelPackageService
 {
     public async Task<TravelPackage> Add(TravelPackage travelPackage)
     {
-        File.AppendAllText(Constants.TRAVEL_PACKAGES_PATH, $"{travelPackage.Id}|{travelPackage.Destination}|{travelPackage.Duration}|{travelPackage.Price}|{travelPackage.Spots}|{travelPackage.Itinerary}\n");
+        File.AppendAllText(Constants.TRAVEL_PACKAGES_PATH, $"{travelPackage.Id}|{travelPackage.Name}|{travelPackage.Destination}|{travelPackage.Duration}|{travelPackage.Price}|{travelPackage.Spots}|{travelPackage.Itinerary}\n");
         return travelPackage;
     }
     public async Task<bool> Delete(int id)
@@ -24,7 +24,7 @@ public class TravelPackageService : ITravelPackageService
             if (p.Id == id)
                 continue;
 
-            sb.AppendLine($"{p.Id}|{p.Destination}|{p.Duration}|{p.Price}|{p.Spots}|{p.Itinerary}");
+            sb.AppendLine($"{p.Id}|{p.Name}|{p.Destination}|{p.Duration}|{p.Price}|{p.Spots}|{p.Itinerary}");
         }
 
         File.WriteAllText(Constants.TRAVEL_PACKAGES_PATH, sb.ToString());
