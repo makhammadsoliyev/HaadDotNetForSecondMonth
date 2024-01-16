@@ -7,8 +7,4 @@
     <Nullable>disable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Spire.PDF" Version="10.1.0" />
-  </ItemGroup>
-
 </Project>
