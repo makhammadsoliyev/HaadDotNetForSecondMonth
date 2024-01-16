@@ -128,6 +128,16 @@ public class TravelPackageMenu
         Console.ReadKey();
     }
 
+    private async Task SearchByPackageName()
+    {
+        string name = AnsiConsole.Ask<string>("[blue]Name: [/]");
+        var packages = await travelPackageService.SearchByPackageName(name);
+        var table = new SelectionMenu().DataTable(name, packages.ToArray());
+        AnsiConsole.Write(table);
+        AnsiConsole.MarkupLine("[blue]Enter to continue...[/]");
+        Console.ReadKey();
+    }
+
     public async Task Display()
     {
         var circle = true;
@@ -137,7 +147,7 @@ public class TravelPackageMenu
         {
             AnsiConsole.Clear();
             var selection = selectionDisplay.ShowSelectionMenu("Choose one of options",
-                new string[] { "Add", "GetById", "Update", "Delete", "GetAll", "Back" });
+                new string[] { "Add", "GetById", "Update", "Delete", "GetAll", "SearchByPackageName", "Back" });
 
             switch (selection)
             {
@@ -155,6 +165,9 @@ public class TravelPackageMenu
                     break;
                 case "GetAll":
                     await GetAll();
+                    break;
+                case "SearchByPackageName":
+                    await SearchByPackageName();
                     break;
                 case "Back":
                     circle = false;

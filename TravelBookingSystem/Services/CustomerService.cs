@@ -67,6 +67,12 @@ public class CustomerService : ICustomerService
         return customer;
     }
 
+    public async Task<List<Customer>> SearchByName(string fullName)
+    {
+        var customers = await GetAll();
+        return customers.FindAll(c => $"{c.FirstName} {c.LastName}" == fullName);
+    }
+
     public async Task<Customer> Update(int id, Customer customer)
     {
         var customers = await GetAll();

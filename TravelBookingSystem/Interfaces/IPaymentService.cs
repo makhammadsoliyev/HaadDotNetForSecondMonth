@@ -9,4 +9,5 @@ public interface IPaymentService
     Task<Payment> Update(int id, Payment payment);
     Task<bool> Delete(int id);
     Task<List<Payment>> GetAll();
+    Task<List<Payment>> GetAllByCustomerId(int customerId);
 }

@@ -134,6 +134,23 @@ public class PaymentMenu
         Console.ReadKey();
     }
 
+
+    private async Task GetAllByCustomerId()
+    {
+        int customerId = AnsiConsole.Ask<int>("[aqua]CustomerId: [/]");
+        while (customerId <= 0)
+        {
+            AnsiConsole.MarkupLine($"[red]Invalid input.[/]");
+            customerId = AnsiConsole.Ask<int>("[aqua]CustomerId: [/]");
+        }
+
+        var payments = await paymentService.GetAllByCustomerId(customerId);
+        var table = new SelectionMenu().DataTable($"Payments of CustomerId: {customerId}", payments.ToArray());
+        AnsiConsole.Write(table);
+        AnsiConsole.MarkupLine("[blue]Enter to continue...[/]");
+        Console.ReadKey();
+    }
+
     public async Task Display()
     {
         var circle = true;
@@ -143,7 +160,7 @@ public class PaymentMenu
         {
             AnsiConsole.Clear();
             var selection = selectionDisplay.ShowSelectionMenu("Choose one of options",
-                new string[] { "Add", "GetById", "Update", "Delete", "GetAll", "Back" });
+                new string[] { "Add", "GetById", "Update", "Delete", "GetAll", "GetAllByCustomerId", "Back" });
 
             switch (selection)
             {
@@ -161,6 +178,9 @@ public class PaymentMenu
                     break;
                 case "GetAll":
                     await GetAll();
+                    break;
+                case "GetAllByCustomerId":
+                    await GetAllByCustomerId();
                     break;
                 case "Back":
                     circle = false;

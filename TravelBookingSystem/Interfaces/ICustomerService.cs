@@ -9,4 +9,5 @@ public interface ICustomerService
     Task<Customer> Update(int id, Customer customer);
     Task<bool> Delete(int id);
     Task<List<Customer>> GetAll();
+    Task<List<Customer>> SearchByName(string fullName);
 }

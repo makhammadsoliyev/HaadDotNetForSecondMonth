@@ -71,6 +71,22 @@ public class PaymentService : IPaymentService
         return payments;
     }
 
+    public async Task<List<Payment>> GetAllByCustomerId(int customerId)
+    {
+        var payments = await GetAll();
+        var bookings = await bookingService.GetAllByCustomerId(customerId);
+        var result = new List<Payment>();
+
+        foreach (var booking in bookings)
+        {
+            var payment = payments.FirstOrDefault(p => p.BookingId == booking.Id);
+            if (payment is not null)
+                result.Add(payment);
+        }
+
+        return result;
+    }
+
     public async Task<Payment> GetById(int id)
     {
         var payments = await GetAll();

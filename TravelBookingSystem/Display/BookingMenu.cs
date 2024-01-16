@@ -157,6 +157,21 @@ public class BookingMenu
         Console.ReadKey();
     }
 
+    private async Task GetAllByCustomerId()
+    {
+        int customerId = AnsiConsole.Ask<int>("[aqua]CustomerId: [/]");
+        while (customerId <= 0)
+        {
+            AnsiConsole.MarkupLine($"[red]Invalid input.[/]");
+            customerId = AnsiConsole.Ask<int>("[aqua]CustomerId: [/]");
+        }
+        var bookings = await bookingService.GetAllByCustomerId(customerId);
+        var table = new SelectionMenu().DataTable($"Bookings of CustomerId: {customerId}", bookings.ToArray());
+        AnsiConsole.Write(table);
+        AnsiConsole.MarkupLine("[blue]Enter to continue...[/]");
+        Console.ReadKey();
+    }
+
     public async Task Display()
     {
         var circle = true;
@@ -166,7 +181,7 @@ public class BookingMenu
         {
             AnsiConsole.Clear();
             var selection = selectionDisplay.ShowSelectionMenu("Choose one of options",
-                new string[] { "Add", "GetById", "Update", "Delete", "GetAll", "Back" });
+                new string[] { "Add", "GetById", "Update", "Delete", "GetAll", "GetAllByCustomerId", "Back" });
 
             switch (selection)
             {
@@ -184,6 +199,9 @@ public class BookingMenu
                     break;
                 case "GetAll":
                     await GetAll();
+                    break;
+                case "GetAllByCustomerId":
+                    await GetAllByCustomerId();
                     break;
                 case "Back":
                     circle = false;

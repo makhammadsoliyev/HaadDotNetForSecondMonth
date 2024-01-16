@@ -135,6 +135,16 @@ public class CustomerMenu
         Console.ReadKey();
     }
 
+    private async Task SearchByName()
+    {
+        string name = AnsiConsole.Ask<string>("[blue]FullName(first, last): [/]").Trim();
+        var customers = await customerService.SearchByName(name);
+        var table = new SelectionMenu().DataTable(name, customers.ToArray());
+        AnsiConsole.Write(table);
+        AnsiConsole.MarkupLine("[blue]Enter to continue...[/]");
+        Console.ReadKey();
+    }
+
     public async Task Display()
     {
         var circle = true;
@@ -144,7 +154,7 @@ public class CustomerMenu
         {
             AnsiConsole.Clear();
             var selection = selectionDisplay.ShowSelectionMenu("Choose one of options",
-                new string[] { "Add", "GetById", "Update", "Delete", "GetAll", "Back" });
+                new string[] { "Add", "GetById", "Update", "Delete", "GetAll", "SearchByName", "Back" });
 
             switch (selection)
             {
@@ -162,6 +172,9 @@ public class CustomerMenu
                     break;
                 case "GetAll":
                     await GetAll();
+                    break;
+                case "SearchByName":
+                    await SearchByName();
                     break;
                 case "Back":
                     circle = false;

@@ -9,4 +9,5 @@ public interface IBookingService
     Task<Booking> Update(int id, Booking booking);
     Task<bool> Delete(int id);
     Task<List<Booking>> GetAll();
+    Task<List<Booking>> GetAllByCustomerId(int customerId);
 }

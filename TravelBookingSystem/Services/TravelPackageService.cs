@@ -66,6 +66,12 @@ public class TravelPackageService : ITravelPackageService
         return package;
     }
 
+    public async Task<List<TravelPackage>> SearchByPackageName(string name)
+    {
+        var packages = await GetAll();
+        return packages.FindAll(p => p.Name.Equals(name));
+    }
+
     public async Task<TravelPackage> Update(int id, TravelPackage travelPackage)
     {
         var packages = await GetAll();

@@ -9,4 +9,5 @@ public interface ITravelPackageService
     Task<TravelPackage> Update(int id, TravelPackage travelPackage);
     Task<bool> Delete(int id);
     Task<List<TravelPackage>> GetAll();
+    Task<List<TravelPackage>> SearchByPackageName(string name);
 }

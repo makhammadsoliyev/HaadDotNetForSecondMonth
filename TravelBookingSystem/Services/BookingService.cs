@@ -66,6 +66,12 @@ public class BookingService : IBookingService
         return bookings;
     }
 
+    public async Task<List<Booking>> GetAllByCustomerId(int customerId)
+    {
+        var bookings = await GetAll();
+        return bookings.FindAll(b => b.CustomerId == customerId);
+    }
+
     public async Task<Booking> GetById(int id)
     {
         var bookings = await GetAll();
