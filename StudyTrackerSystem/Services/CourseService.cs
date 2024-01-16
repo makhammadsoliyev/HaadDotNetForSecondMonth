@@ -6,7 +6,7 @@ using System.Text;
 namespace StudyTrackerSystem.Services;
 
 public class CourseService : ICourseService
-{ 
+{
     public Course Add(Course course)
     {
         var courses = GetAll();
